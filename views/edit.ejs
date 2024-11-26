@@ -116,13 +116,13 @@
             </div>
         </div>
 
-        <h1>create a new hisaab</h1>
-        <form action="/createhissab" method="post">
-            <input class="title" type="text" placeholder="HISSAB TITLE " name="title" />
+        <form action="/update/<%=filename%>" method="post">
+            <h1> your`re editing hissab of <%=filename.split(".")[0]%> date file</h1>
+          
 
-            <textarea id="body" name="hissab" placeholder=" about hissab"></textarea>
+            <textarea id="body" name="hissab" placeholder=" about hissab"><%=filedata%></textarea>
 
-            <input class="sumit" type="submit" value="sumit" />
+            <input class="sumit" type="submit" value="UpDate" />
         </form>
     </div>
 </body>

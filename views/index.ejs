@@ -44,6 +44,11 @@
       justify-content: space-between;
       margin: 1vh;
     }
+   #no{
+      text-transform: capitalize;
+      padding-left: 20px;
+      font-size: 50px;
+    }
     .p1 {
       display: flex;
       align-items: center;
@@ -71,7 +76,9 @@
           <h1>khaatabook</h1>
         </div>
         <div class="navp2">
+        <a href="/">
           <h2>home</h2>
+        </a>
           <a href="/create"><h2>create a new hissab</h2></a>
         </div>
       </div>
@@ -96,13 +103,15 @@
               </a>
             </div>
             <div class="delete">
+             <a href="/delete/<%=file%>">
               <i class="ri-delete-bin-6-fill"></i>
+             </a> 
             </div>
           </div>
         </div>
       </div>
       <%})%> <% }else{ %>
-      <h3>no hissab</h3>
+      <h3 id="no">no hissab</h3>
       <% } %>
     </div>
   </body>

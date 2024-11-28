@@ -5,7 +5,6 @@ const fs = require("fs")
 /* GET home page. */
 router.get('/', function(req, res, next) {
   fs.readdir(`./hissab`, function(err,files){
-
     res.render('index', {files:files});
   })
 });
@@ -39,6 +38,13 @@ router.get('/edit/:filename',function(req,res,next){
   fs.readFile(`./hissab/${req.params.filename}`,"utf-8",function(err,filedata){
     if(err) return res.send("something went wrong");
     else res.render("edit",{filedata,filename:req.params.filename});
+  })
+ 
+})
+router.get('/delete/:filename',function(req,res,next){
+  fs.unlink(`./hissab/${req.params.filename}`,function(err,){
+    if(err) return res.send("something went wrong");
+    else res.redirect("/");
   })
  
 })
